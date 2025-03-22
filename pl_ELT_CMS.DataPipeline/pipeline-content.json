@@ -1,0 +1,70 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b66d72e3-7379-b49a-437b-804c225a7c2d",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "sessionTag": "HCSparkSession"
+        },
+        "policy": {
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "2-Transform To Silver",
+        "dependsOn": [
+          {
+            "activity": "1-Get CMS Data",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "af289a98-b9b5-a536-4458-6b4296a4da41",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "sessionTag": "HCSparkSession"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "1-Get CMS Data",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "62f6979c-98e7-ae20-416f-9f238775a778",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "sessionTag": "HCSparkSession"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "3-Create PowerBI Model",
+        "dependsOn": [
+          {
+            "activity": "2-Transform To Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
