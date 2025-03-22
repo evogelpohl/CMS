@@ -1,0 +1,121 @@
+table '| Geography'
+	lineageTag: cc5ed92f-7e0d-49e3-a9ba-cca0cd378d74
+	sourceLineageTag: [curated_cms].[cms_provider_dim_geography]
+
+	column 'Prescriber City'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eebe0364-f3f0-43ba-b504-681ee8f619ba
+		sourceLineageTag: Prscrbr_City
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: Prscrbr_City
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prescriber City State'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 640da493-9a6e-4393-ad76-f51379a10907
+		sourceLineageTag: Prscrbr_City_State
+		dataCategory: Place
+		summarizeBy: none
+		sourceColumn: Prscrbr_City_State
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prescriber State'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5d50faff-5b21-4052-b3f3-be336824057a
+		sourceLineageTag: Prscrbr_State_Abrvtn
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Prscrbr_State_Abrvtn
+
+		changedProperty = Name
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prescriber State FIPS'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: cf50f45d-2e31-45a3-9254-1b695039c2e8
+		sourceLineageTag: Prscrbr_State_FIPS
+		summarizeBy: none
+		sourceColumn: Prscrbr_State_FIPS
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Max_Year_geo
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a79d9b62-8d24-4380-8bca-88a3c64de3f6
+		sourceLineageTag: Max_Year
+		summarizeBy: none
+		sourceColumn: Max_Year
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Min_Year_geo
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9bda8f75-abbd-4509-bf01-ea979bf2684d
+		sourceLineageTag: Min_Year
+		summarizeBy: none
+		sourceColumn: Min_Year
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column geo_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 052dfdbb-0d03-45f3-a6ff-840639405bca
+		sourceLineageTag: geo_key
+		summarizeBy: none
+		sourceColumn: geo_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '| Geography' = entity
+		mode: directLake
+		source
+			entityName: cms_provider_dim_geography
+			schemaName: curated_cms
+			expressionSource: DatabaseQuery
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,16 @@
+relationship ee01d046-ce55-e10a-6006-d08b030c0e75
+	fromColumn: 'Drug Costs'.drug_key
+	toColumn: '| Drug'.drug_key
+
+relationship dc54f51a-9396-2472-32d7-a8a462cdd88d
+	fromColumn: 'Drug Costs'.geo_key
+	toColumn: '| Geography'.geo_key
+
+relationship 1ec6c092-8c11-4204-54f0-fa79065df252
+	fromColumn: 'Drug Costs'.provider_key
+	toColumn: '| Provider'.provider_key
+
+relationship 29de2509-885d-f469-68f1-fc14618e2606
+	fromColumn: 'Drug Costs'.Year
+	toColumn: '| Year'.Year
+

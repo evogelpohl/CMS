@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "bi_sm_cms_data",
+    "description": "Insights for CMS Medicare Part-D Drug Pricing by Provider, Region and Drug."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "895eec2c-8804-9df2-4220-1488f189217e"
+  }
+}
