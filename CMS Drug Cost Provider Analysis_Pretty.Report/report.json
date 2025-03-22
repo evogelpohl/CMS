@@ -1,0 +1,239 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2},\"customTheme\":{\"name\":\"Temperature\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "filters": "[{\"name\":\"8fc300c350a2ac00ce5d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Year\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2022L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":0},{\"name\":\"3b278a2894c05bc846e9\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Geography\"}},\"Property\":\"Prescriber State\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Geography\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber State\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"ordinal\":1}]",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Temperature",
+            "path": "BuiltInThemes/Temperature.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "items": [
+          {
+            "name": "Centers_for_Medicare_and_Medic34380258825535437.png",
+            "path": "Centers_for_Medicare_and_Medic34380258825535437.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Decomposition",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9dc1658fe1da9d1f92c9",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"56e7af84bc69609d83d6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":60.16589861751152,\"y\":5.8986175115207375,\"z\":1000,\"width\":625.8433179723502,\"height\":50.72811059907834,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"CMS Part_D Decomposing Total Drug Costs\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"14pt\"}}]}]}}]},\"vcObjects\":{}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 50.73,
+          "width": 625.84,
+          "x": 60.17,
+          "y": 5.90,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8618939cd86306655bb3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1133.2574679943102,\"y\":2.5604551920341394,\"z\":4000,\"width\":123.41394025604552,\"height\":66.57183499288763,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Centers_for_Medicare_and_Medic34380258825535437.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 66.57,
+          "width": 123.41,
+          "x": 1133.26,
+          "y": 2.56,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"8e7c6f01b97ccf8b37a8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":75.98173515981735,\"z\":0,\"width\":1280,\"height\":644.0913242009133,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"decompositionTreeVisual\",\"projections\":{\"ExplainBy\":[{\"queryRef\":\"| Geography.Prescriber State\",\"active\":true},{\"queryRef\":\"| Provider.Prescriber Type\",\"active\":true},{\"queryRef\":\"| Drug.Brand Name\",\"active\":true},{\"queryRef\":\"| Drug.Generic Name\"},{\"queryRef\":\"| Provider.Prescriber Full Name\"},{\"queryRef\":\"| Geography.Prescriber City\"}],\"Analyze\":[{\"queryRef\":\"Drug Costs.Total Beneficiaries\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Geography\",\"Type\":0},{\"Name\":\"|2\",\"Entity\":\"| Provider\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0},{\"Name\":\"|1\",\"Entity\":\"| Drug\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber City\"},\"Name\":\"| Geography.Prescriber City\",\"NativeReferenceName\":\"Prescriber City\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber State\"},\"Name\":\"| Geography.Prescriber State\",\"NativeReferenceName\":\"Prescriber State\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|2\"}},\"Property\":\"Prescriber Type\"},\"Name\":\"| Provider.Prescriber Type\",\"NativeReferenceName\":\"Prescriber Type\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Beneficiaries\"},\"Name\":\"Drug Costs.Total Beneficiaries\",\"NativeReferenceName\":\"Total Beneficiaries\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|1\"}},\"Property\":\"Generic Name\"},\"Name\":\"| Drug.Generic Name\",\"NativeReferenceName\":\"Generic Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|2\"}},\"Property\":\"Prescriber Full Name\"},\"Name\":\"| Provider.Prescriber Full Name\",\"NativeReferenceName\":\"Prescriber Full Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|1\"}},\"Property\":\"Brand Name\"},\"Name\":\"| Drug.Brand Name\",\"NativeReferenceName\":\"Brand Name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Beneficiaries\"}}}]},\"expansionStates\":[{\"roles\":[\"ExplainBy\"],\"levels\":[{\"queryRefs\":[\"| Geography.Prescriber State\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Geography\"}},\"Property\":\"Prescriber State\"}}],\"isPinned\":true},{\"queryRefs\":[\"| Provider.Prescriber Type\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Provider\"}},\"Property\":\"Prescriber Type\"}}],\"isPinned\":true},{\"queryRefs\":[\"| Drug.Brand Name\"],\"isCollapsed\":true,\"isPinned\":true},{\"queryRefs\":[\"| Drug.Generic Name\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Drug\"}},\"Property\":\"Generic Name\"}}]},{\"queryRefs\":[\"| Provider.Prescriber Full Name\"],\"isCollapsed\":true},{\"queryRefs\":[\"| Geography.Prescriber City\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Geography\"}},\"Property\":\"Prescriber City\"}}]}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'NY'\"}}],\"isToggled\":true,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Internal Medicine'\"}}],\"isToggled\":true}]}]}}],\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"tree\":[{\"properties\":{\"effectiveBarsPerLevel\":{\"expr\":{\"Literal\":{\"Value\":\"6L\"}}},\"density\":{\"expr\":{\"Literal\":{\"Value\":\"'sparse'\"}}}}}],\"categoryLabels\":[{\"properties\":{\"categoryLabelFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"dataLabels\":[{\"properties\":{\"dataLabelFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"levelHeader\":[{\"properties\":{\"levelSubtitleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"analysis\":[{\"properties\":{\"aiMode\":{\"expr\":{\"Literal\":{\"Value\":\"'absolute'\"}}},\"aiEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"insights\":[{\"properties\":{\"isAINode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Geography\"}},\"Property\":\"Prescriber State\"}},\"Right\":{\"Literal\":{\"Value\":\"'FL'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Geography\"}},\"Property\":\"Prescriber City\"}},\"Right\":{\"Literal\":{\"Value\":\"'Tampa'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Drug\"}},\"Property\":\"Brand Name\"}},\"Right\":{\"Literal\":{\"Value\":\"'Amlodipine Besylate'\"}}}}},{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Provider\"}},\"Property\":\"Prescriber Type\"}},\"Right\":{\"Literal\":{\"Value\":\"'Certified Nurse Midwife'\"}}}}}]}}]},\"vcObjects\":{\"visualTooltip\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 644.09,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 75.98,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"98522146c3643475649a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.652058764261657,\"y\":60.52834099392591,\"z\":3000,\"width\":1240.4379492001958,\"height\":24.368552867684457,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 24.37,
+          "width": 1240.44,
+          "x": 19.65,
+          "y": 60.53,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b8f6de663edd2a7f23e2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":10,\"height\":28,\"width\":28,\"tabOrder\":2000,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHZpZXdCb3g9JzAgMCAyMCAyMCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTIgNC41QzEyIDMuNjcxNTcgMTEuMzI4NCAzIDEwLjUgM0g5LjVDOC42NzE1NyAzIDggMy42NzE1NyA4IDQuNVYxN0gxMlY0LjVaTTEzIDZWMTdIMTYuNUMxNi43NzYxIDE3IDE3IDE2Ljc3NjEgMTcgMTYuNVY4QzE3IDYuODk1NDMgMTYuMTA0NiA2IDE1IDZIMTNaTTUgOUg3VjE3SDMuNUMzLjIyMzg2IDE3IDMgMTYuNzc2MSAzIDE2LjVWMTFDMyA5Ljg5NTQzIDMuODk1NDMgOSA1IDlaJyBmaWxsPSd3aGl0ZScvPjwvc3ZnPgo='\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}}}}]}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 28.00,
+          "width": 28.00,
+          "x": 20.00,
+          "y": 10.00,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "State Drug Cost Burden",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a87a79f75466bcb3ae04",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"11b57bc1fad5aa3d7b6c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.652058764261657,\"y\":60.52834099392591,\"z\":3000,\"width\":1240.4379492001958,\"height\":24.368552867684457,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 24.37,
+          "width": 1240.44,
+          "x": 19.65,
+          "y": 60.53,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"67bc199b1ed3dc27f6c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":21.82488479262673,\"y\":99.68663594470046,\"z\":0,\"width\":1236.3502304147466,\"height\":612.2764976958525,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"| Geography.Prescriber State\"},{\"queryRef\":\"| Drug.Brand Name\"},{\"queryRef\":\"Drug Costs.% Brand for State Total\"},{\"queryRef\":\"Drug Costs.Brand_Rank_Percent\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Geography\",\"Type\":0},{\"Name\":\"|1\",\"Entity\":\"| Drug\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber State\"},\"Name\":\"| Geography.Prescriber State\",\"NativeReferenceName\":\"Prescriber State\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|1\"}},\"Property\":\"Brand Name\"},\"Name\":\"| Drug.Brand Name\",\"NativeReferenceName\":\"Brand Name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"% Brand for State Total\"},\"Name\":\"Drug Costs.% Brand for State Total\",\"NativeReferenceName\":\"% Brand for State Total\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Brand_Rank_Percent\"},\"Name\":\"Drug Costs.Brand_Rank_Percent\",\"NativeReferenceName\":\"Brand_Rank_Percent\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"e83a7990a7e4bca1d328\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Drug Costs\"}},\"Property\":\"Top_3_Flag\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Top_3_Flag\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
+          "height": 612.28,
+          "width": 1236.35,
+          "x": 21.82,
+          "y": 99.69,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"792f4ed54d9f5cedf1d3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1133.2574679943102,\"y\":2.5604551920341394,\"z\":4000,\"width\":123.41394025604552,\"height\":66.57183499288763,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Centers_for_Medicare_and_Medic34380258825535437.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 66.57,
+          "width": 123.41,
+          "x": 1133.26,
+          "y": 2.56,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ec5bc51cfa02239573f9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":10,\"height\":28,\"width\":28,\"tabOrder\":1000,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHZpZXdCb3g9JzAgMCAyMCAyMCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTIgNC41QzEyIDMuNjcxNTcgMTEuMzI4NCAzIDEwLjUgM0g5LjVDOC42NzE1NyAzIDggMy42NzE1NyA4IDQuNVYxN0gxMlY0LjVaTTEzIDZWMTdIMTYuNUMxNi43NzYxIDE3IDE3IDE2Ljc3NjEgMTcgMTYuNVY4QzE3IDYuODk1NDMgMTYuMTA0NiA2IDE1IDZIMTNaTTUgOUg3VjE3SDMuNUMzLjIyMzg2IDE3IDMgMTYuNzc2MSAzIDE2LjVWMTFDMyA5Ljg5NTQzIDMuODk1NDMgOSA1IDlaJyBmaWxsPSd3aGl0ZScvPjwvc3ZnPgo='\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}}}}]}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 28.00,
+          "width": 28.00,
+          "x": 20.00,
+          "y": 10.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"fedee7786cdd77eb06c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":60.16589861751152,\"y\":5.8986175115207375,\"z\":1000,\"width\":625.8433179723502,\"height\":50.72811059907834,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"CMS Part_D Top 3 Brand Name Drug as Total State Drug Costs, 2022\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"14pt\"}}]}]}}]},\"vcObjects\":{}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 50.73,
+          "width": 625.84,
+          "x": 60.17,
+          "y": 5.90,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"7cebf17575b5d3034b23\",\"target\":\"d035080f9d5628207a7b\",\"type\":1}],\"filterSortOrder\":3}",
+      "displayName": "Drugs by Prescriber Type",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"5f93f79fd264e848fa8f\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":0}]",
+      "height": 720.00,
+      "name": "c02145b6b08df272ecf3",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"31fc260adff919b1f88f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1133.2574679943102,\"y\":2.5604551920341394,\"z\":7000,\"width\":123.41394025604552,\"height\":66.57183499288763,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Centers_for_Medicare_and_Medic34380258825535437.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 66.57,
+          "width": 123.41,
+          "x": 1133.26,
+          "y": 2.56,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"58c527d8a627f70c035a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":540.5955255110252,\"y\":102.65664160401002,\"z\":0,\"width\":739.3161803591547,\"height\":616.881653675473,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"| Drug.Generic Name\",\"active\":true},{\"queryRef\":\"| Drug.Brand Name\"}],\"Columns\":[{\"queryRef\":\"| Year.Year\",\"active\":true}],\"Values\":[{\"queryRef\":\"Drug Costs.Total 30 Day Fills\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Drug\",\"Type\":0},{\"Name\":\"|1\",\"Entity\":\"| Year\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Generic Name\"},\"Name\":\"| Drug.Generic Name\",\"NativeReferenceName\":\"Generic Name1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Brand Name\"},\"Name\":\"| Drug.Brand Name\",\"NativeReferenceName\":\"Brand Name1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|1\"}},\"Property\":\"Year\"},\"Name\":\"| Year.Year\",\"NativeReferenceName\":\"Year1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total 30 Day Fills\"},\"Name\":\"Drug Costs.Total 30 Day Fills\",\"NativeReferenceName\":\"Total 30 Day Fills1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total 30 Day Fills\"}}}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"| Drug.Generic Name\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Drug\"}},\"Property\":\"Generic Name\"}}],\"isPinned\":true},{\"queryRefs\":[\"| Drug.Brand Name\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"133.77399380956825D\"}}}},\"selector\":{\"data\":[{\"total\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}}]}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"139.13871187599486D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2022L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"97.15623933413913D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2020L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"220.48370917127448D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2021L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2013L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2014L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2015L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2016L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2017L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"99D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2019L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2013L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2014L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2015L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2016L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2017L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2019L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2020L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"67D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2021L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"152.33333333333331D\"}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2022L\"}}}}}]}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"232D\"}}}},\"selector\":{\"metadata\":\"| Drug.Generic Name\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"233D\"}}}},\"selector\":{\"metadata\":\"| Drug.Brand Name\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"129.36694677871148D\"}}}},\"selector\":{\"data\":[{\"total\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"| Year\"}},\"Property\":\"Year\"}}]}]}}],\"columnHeaders\":[{\"properties\":{\"autoSizeColumnWidth\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}}}}],\"rowHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}}}}],\"values\":[{\"properties\":{\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"grid\":[{\"properties\":{\"outlineWeight\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"columnTotal\":[{\"properties\":{\"applyToHeaders\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"rowTotal\":[{\"properties\":{\"applyToHeaders\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'30 Day Fills by Drug and Year'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 616.88,
+          "width": 739.32,
+          "x": 540.60,
+          "y": 102.66,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"7cebf17575b5d3034b23\",\"layouts\":[{\"id\":0,\"position\":{\"x\":27.312317490975143,\"y\":102.65664160401002,\"z\":3000,\"width\":500.09795130026896,\"height\":272.1813708583385,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"| Provider.Prescriber Type\",\"active\":true}],\"Y\":[{\"queryRef\":\"Drug Costs.Total Beneficiaries\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Provider\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber Type\"},\"Name\":\"| Provider.Prescriber Type\",\"NativeReferenceName\":\"Prescriber Type1\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Beneficiaries\"},\"Name\":\"Drug Costs.Total Beneficiaries\",\"NativeReferenceName\":\"Total Beneficiaries1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Beneficiaries\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 272.18,
+          "width": 500.10,
+          "x": 27.31,
+          "y": 102.66,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"7e9213500f6cac1aa13b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.652058764261657,\"y\":368.6726224175487,\"z\":6000,\"width\":507.80919846852123,\"height\":24.368552867684457,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 24.37,
+          "width": 507.81,
+          "x": 19.65,
+          "y": 368.67,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"b1244576f9c8a42ed837\",\"layouts\":[{\"id\":0,\"position\":{\"x\":60.21616225781569,\"y\":5.947275284722537,\"z\":1000,\"width\":354.60628885158127,\"height\":40.14410817187713,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"CMS Part_D Prescriber Analysis\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"14pt\"}}]}]}}]},\"vcObjects\":{}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 40.14,
+          "width": 354.61,
+          "x": 60.22,
+          "y": 5.95,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"cc6c6b5939a48867660b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":10,\"height\":28,\"width\":28,\"tabOrder\":1000,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAnIGhlaWdodD0nMjAnIHZpZXdCb3g9JzAgMCAyMCAyMCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTIgNC41QzEyIDMuNjcxNTcgMTEuMzI4NCAzIDEwLjUgM0g5LjVDOC42NzE1NyAzIDggMy42NzE1NyA4IDQuNVYxN0gxMlY0LjVaTTEzIDZWMTdIMTYuNUMxNi43NzYxIDE3IDE3IDE2Ljc3NjEgMTcgMTYuNVY4QzE3IDYuODk1NDMgMTYuMTA0NiA2IDE1IDZIMTNaTTUgOUg3VjE3SDMuNUMzLjIyMzg2IDE3IDMgMTYuNzc2MSAzIDE2LjVWMTFDMyA5Ljg5NTQzIDMuODk1NDMgOSA1IDlaJyBmaWxsPSd3aGl0ZScvPjwvc3ZnPgo='\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#118DFF'\"}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}}}}]}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 28.00,
+          "width": 28.00,
+          "x": 20.00,
+          "y": 10.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d035080f9d5628207a7b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.33319433688767,\"y\":410.73052560513094,\"z\":5000,\"width\":507.51653064871624,\"height\":309.06455392069256,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"| Geography.Prescriber State\",\"active\":true}],\"Y\":[{\"queryRef\":\"Drug Costs.Total Drug Cost\"}],\"Series\":[{\"queryRef\":\"| Drug.Brand Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"|\",\"Entity\":\"| Geography\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Drug Costs\",\"Type\":0},{\"Name\":\"|1\",\"Entity\":\"| Drug\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|\"}},\"Property\":\"Prescriber State\"},\"Name\":\"| Geography.Prescriber State\",\"NativeReferenceName\":\"Prescriber State\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Drug Cost\"},\"Name\":\"Drug Costs.Total Drug Cost\",\"NativeReferenceName\":\"Total Drug Cost\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"|1\"}},\"Property\":\"Brand Name\"},\"Name\":\"| Drug.Brand Name\",\"NativeReferenceName\":\"Brand Name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Total Drug Cost\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Costs by Brand Name, State'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 309.06,
+          "width": 507.52,
+          "x": 20.33,
+          "y": 410.73,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f798bad0679b4b5a032e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.652058764261657,\"y\":60.52834099392591,\"z\":4000,\"width\":1240.4379492001958,\"height\":24.368552867684457,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 24.37,
+          "width": 1240.44,
+          "x": 19.65,
+          "y": 60.53,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Temperature"
+}

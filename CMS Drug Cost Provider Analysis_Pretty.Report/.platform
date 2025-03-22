@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CMS Drug Cost Provider Analysis_Pretty"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "411a33a6-9ef1-a82e-4da7-77ca65077332"
+  }
+}
